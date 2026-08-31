@@ -1,0 +1,58 @@
+.secao { background: var(--branco-tinta); }
+
+.cabecalho {
+  max-width: 34ch;
+  margin-bottom: 3rem;
+}
+
+.cabecalho h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+
+.lista {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid rgba(42, 38, 34, 0.14);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr 1.4fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.9rem 1rem;
+  margin: 0 -1rem;
+  border-bottom: 1px solid rgba(42, 38, 34, 0.14);
+  border-radius: 4px;
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.item:hover {
+  background: rgba(42, 38, 34, 0.035);
+  padding-left: 1.4rem;
+}
+
+.mancha {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  margin-top: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
+.item:hover .mancha { transform: scale(1.15); }
+
+.item h3 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.item p {
+  color: rgba(42, 38, 34, 0.78);
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .item {
+    grid-template-columns: 2rem 1fr;
+  }
+  .item p { grid-column: 2; }
+}

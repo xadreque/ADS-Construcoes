@@ -1,0 +1,132 @@
+.rodape {
+  background: var(--carvao);
+  color: rgba(250, 248, 244, 0.72);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
+}
+
+.tira {
+  display: flex;
+  height: 5px;
+}
+.tira span { flex: 1; }
+
+.grelha {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.9fr 1.1fr;
+  gap: clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.colunaMarca .marca {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  color: var(--branco-tinta);
+  text-decoration: none;
+}
+
+.colunaMarca .marca img { height: 1.9rem; width: auto; }
+.colunaMarca .marca span { color: var(--terracota); }
+
+.colunaMarca p {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  max-width: 32ch;
+  color: rgba(250, 248, 244, 0.6);
+}
+
+.tituloColuna {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--branco-tinta);
+  margin: 0 0 1.1rem;
+}
+
+.listaLinks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.listaLinks a {
+  color: rgba(250, 248, 244, 0.68);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.15s ease;
+}
+
+.listaLinks a:hover { color: var(--ocre); }
+
+.contactoItem {
+  display: block;
+  color: rgba(250, 248, 244, 0.68);
+  text-decoration: none;
+  font-size: 0.92rem;
+  margin-bottom: 0.7rem;
+  transition: color 0.15s ease;
+}
+.contactoItem:hover { color: var(--ocre); }
+
+.newsletter p {
+  font-size: 0.88rem;
+  color: rgba(250, 248, 244, 0.6);
+  margin-bottom: 0.9rem;
+  max-width: 30ch;
+}
+
+.formNewsletter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.formNewsletter input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(250, 248, 244, 0.08);
+  border: 1px solid rgba(250, 248, 244, 0.22);
+  border-radius: 2px;
+  padding: 0.65rem 0.8rem;
+  color: var(--branco-tinta);
+  font-size: 0.88rem;
+}
+
+.formNewsletter input::placeholder { color: rgba(250, 248, 244, 0.4); }
+
+.formNewsletter button {
+  background: var(--ocre);
+  color: var(--carvao);
+  padding: 0.65rem 1.1rem;
+  font-size: 0.85rem;
+}
+.formNewsletter button:hover { background: #d69a35; }
+
+.avisoNewsletter {
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+  color: rgba(250, 248, 244, 0.55);
+}
+
+.barraFinal {
+  border-top: 1px solid rgba(250, 248, 244, 0.12);
+  padding: 1.4rem 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: rgba(250, 248, 244, 0.5);
+}
+
+@media (max-width: 900px) {
+  .grelha { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .grelha { grid-template-columns: 1fr; }
+}

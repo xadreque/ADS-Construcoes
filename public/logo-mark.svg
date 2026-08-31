@@ -1,0 +1,14 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Símbolo ADS-Construções">
+  <!-- Esquadria (canto de parede/construção) -->
+  <path d="M34 14 L48 14 L48 72 L100 72 L100 86 L34 86 Z" fill="#1E4B5F"/>
+
+  <!-- Pincelada de tinta a atravessar a esquadria -->
+  <path d="M10 46
+           C 28 36, 46 40, 62 34
+           C 80 27, 96 32, 112 24
+           L 116 46
+           C 98 54, 80 47, 62 55
+           C 46 62, 28 58, 14 68
+           Z"
+        fill="#A6472B"/>
+</svg>

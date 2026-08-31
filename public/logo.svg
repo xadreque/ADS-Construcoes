@@ -1,0 +1,18 @@
+<svg viewBox="0 0 760 130" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ADS-Construções, Lda">
+  <!-- Ícone -->
+  <g transform="translate(0, 5)">
+    <path d="M34 14 L48 14 L48 72 L100 72 L100 86 L34 86 Z" fill="#1E4B5F"/>
+    <path d="M10 46
+             C 28 36, 46 40, 62 34
+             C 80 27, 96 32, 112 24
+             L 116 46
+             C 98 54, 80 47, 62 55
+             C 46 62, 28 58, 14 68
+             Z"
+          fill="#A6472B"/>
+  </g>
+
+  <!-- Nome -->
+  <text x="150" y="70" font-family="Fraunces, 'Iowan Old Style', serif" font-weight="600" font-size="56"><tspan fill="#2A2622">ADS</tspan><tspan fill="#A6472B">-Construções</tspan></text>
+  <text x="150" y="98" font-family="'Work Sans', sans-serif" font-weight="500" font-size="20" letter-spacing="1" fill="#2A2622">LDA</text>
+</svg>

@@ -1,0 +1,73 @@
+.secao { }
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.cabecalho h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+.cabecalho p { color: rgba(42, 38, 34, 0.75); margin-top: 0.6rem; }
+
+.grelha {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+}
+
+.grelha > *:nth-child(3n+1) { grid-row: span 2; }
+
+.peca {
+  position: relative;
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--reboco-escuro);
+  min-height: 170px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.peca img,
+.peca video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.peca:hover img,
+.peca:hover video { transform: scale(1.06); }
+
+.legenda {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 0.92rem;
+  color: var(--branco-tinta);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,0.6) 100%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.peca:hover .legenda,
+.peca:focus-within .legenda { opacity: 1; }
+
+.marcador {
+  position: absolute;
+  z-index: 1;
+  top: 0.7rem;
+  left: 0.8rem;
+  font-size: 0.68rem;
+  color: rgba(250, 248, 244, 0.55);
+}
+
+@media (max-width: 760px) {
+  .grelha { grid-template-columns: repeat(2, 1fr); }
+  .grelha > *:nth-child(3n+1) { grid-row: auto; }
+}

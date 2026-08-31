@@ -1,0 +1,36 @@
+.secao { background: var(--branco-tinta); }
+
+.grelha {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.passo h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+}
+
+.passo { transition: transform 0.2s ease; }
+.passo:hover { transform: translateY(-2px); }
+
+.num {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--terracota);
+  display: block;
+  margin-bottom: 0.6rem;
+  transition: color 0.2s ease;
+}
+
+.passo:hover .num { color: var(--azul-baia); }
+
+.passo p { color: rgba(42, 38, 34, 0.78); }
+
+@media (max-width: 800px) {
+  .grelha { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .grelha { grid-template-columns: 1fr; }
+}

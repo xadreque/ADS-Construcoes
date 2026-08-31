@@ -1,0 +1,94 @@
+:root {
+  /* Paleta — nomes de tinta, não nomes técnicos */
+  --reboco: #f1ece2;       /* fundo — parede rebocada */
+  --reboco-escuro: #e6ded0;
+  --carvao: #2a2622;       /* texto principal */
+  --azul-baia: #1e4b5f;    /* acento primário / CTA */
+  --azul-baia-claro: #2f6a84;
+  --terracota: #a6472b;    /* acento secundário */
+  --ocre: #c08829;         /* destaque pontual */
+  --verde-caju: #5c6b3f;   /* toque raro, sucesso */
+  --branco-tinta: #faf8f4;
+
+  --serif: "Fraunces", "Iowan Old Style", serif;
+  --sans: "Work Sans", -apple-system, sans-serif;
+
+  --max-width: 1180px;
+  --linha: 76ch;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--reboco);
+  color: var(--carvao);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 1.08;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p { max-width: var(--linha); margin: 0; }
+
+a { color: inherit; }
+
+button, .botao {
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  padding: 0.95rem 1.9rem;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.botao:active { transform: translateY(1px); }
+
+.botao-primario {
+  background: var(--azul-baia);
+  color: var(--branco-tinta);
+}
+.botao-primario:hover { background: var(--azul-baia-claro); }
+
+.botao-secundario {
+  background: transparent;
+  color: var(--carvao);
+  border: 1.5px solid var(--carvao);
+}
+.botao-secundario:hover { background: var(--carvao); color: var(--branco-tinta); }
+
+.envolvente {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.secao { padding: clamp(3.5rem, 8vw, 7rem) 0; }
+
+/* focagem visível para acessibilidade de teclado */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ocre);
+  outline-offset: 3px;
+}
+
+img, video { max-width: 100%; display: block; }
+
+::selection { background: var(--ocre); color: var(--carvao); }

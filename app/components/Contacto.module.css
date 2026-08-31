@@ -1,0 +1,78 @@
+.secao {
+  background: var(--carvao);
+  color: var(--branco-tinta);
+}
+
+.grelha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.coluna h2 {
+  color: var(--branco-tinta);
+  font-size: clamp(1.9rem, 3.6vw, 2.6rem);
+  max-width: 14ch;
+}
+
+.coluna p {
+  color: rgba(250, 248, 244, 0.75);
+  margin-top: 1.1rem;
+}
+
+.contactosDirectos {
+  margin-top: 2.2rem;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.contactosDirectos a {
+  text-decoration: none;
+  color: var(--branco-tinta);
+  border-bottom: 1px solid rgba(250, 248, 244, 0.35);
+  padding-bottom: 1px;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+}
+
+.campo {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: rgba(250, 248, 244, 0.7);
+}
+
+.campo input,
+.campo textarea,
+.campo select {
+  background: rgba(250, 248, 244, 0.08);
+  border: 1px solid rgba(250, 248, 244, 0.25);
+  border-radius: 2px;
+  padding: 0.75rem 0.9rem;
+  color: var(--branco-tinta);
+  font-family: var(--sans);
+  font-size: 0.98rem;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder { color: rgba(250, 248, 244, 0.4); }
+
+.enviar {
+  margin-top: 0.4rem;
+  background: var(--ocre);
+  color: var(--carvao);
+}
+.enviar:hover { background: #d69a35; }
+
+.estado {
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
