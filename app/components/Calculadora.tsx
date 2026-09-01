@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import styles from "./Calculadora.module.css";
 import { linkWhatsApp } from "../lib/site-config";
+import { SeletorPersonalizado } from "./SeletorPersonalizado";
 
 // Valores de referência por m² (em Meticais) — AJUSTA aos teus preços reais.
 // São intervalos propositadamente largos para cobrir variação de material
@@ -75,11 +76,12 @@ export function Calculadora() {
 
             <div className={styles.campo}>
               <label htmlFor="tipoCalc">Tipo de trabalho</label>
-              <select id="tipoCalc" value={tipo} onChange={(e) => setTipo(e.target.value)}>
-                {Object.entries(TABELA_PRECOS).map(([chave, valor]) => (
-                  <option key={chave} value={chave}>{valor.label}</option>
-                ))}
-              </select>
+              <SeletorPersonalizado
+                valor={tipo}
+                aoMudar={setTipo}
+                opcoes={Object.entries(TABELA_PRECOS).map(([chave, v]) => ({ valor: chave, rotulo: v.label }))}
+                rotuloAcessivel="Tipo de trabalho"
+              />
             </div>
 
             <button type="submit" className={`botao ${styles.botaoCalcular}`}>

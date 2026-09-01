@@ -10,6 +10,7 @@ import { Processo } from "./components/Processo";
 import { FAQ } from "./components/FAQ";
 import { Contacto } from "./components/Contacto";
 import { Footer } from "./components/Footer";
+import { AoEntrarNaVista } from "./components/AoEntrarNaVista";
 
 export default function Home() {
   return (
@@ -19,25 +20,25 @@ export default function Home() {
         <Hero />
         <FaixaConfianca />
         <Pincelada cor="var(--branco-tinta)" />
-        <Servicos />
+        <AoEntrarNaVista><Servicos /></AoEntrarNaVista>
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--reboco)" />
         </div>
-        <Calculadora />
+        <AoEntrarNaVista><Calculadora /></AoEntrarNaVista>
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--reboco)" />
         </div>
-        <Portfolio />
+        <AoEntrarNaVista><Portfolio /></AoEntrarNaVista>
         <Pincelada cor="var(--branco-tinta)" />
-        <Testemunhos />
+        <AoEntrarNaVista><Testemunhos /></AoEntrarNaVista>
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--reboco)" />
         </div>
-        <Processo />
+        <AoEntrarNaVista><Processo /></AoEntrarNaVista>
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--reboco)" />
         </div>
-        <FAQ />
+        <AoEntrarNaVista><FAQ /></AoEntrarNaVista>
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--carvao)" />
         </div>

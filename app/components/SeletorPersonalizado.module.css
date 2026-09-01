@@ -1,0 +1,98 @@
+.contentor {
+  position: relative;
+}
+
+.botao {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  background: var(--branco-tinta);
+  border: 1.5px solid rgba(42, 38, 34, 0.18);
+  border-radius: 4px;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  color: var(--carvao);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover { border-color: rgba(42, 38, 34, 0.3); }
+
+.botao[data-aberto="true"] {
+  border-color: var(--azul-baia);
+  box-shadow: 0 0 0 3px rgba(30, 75, 95, 0.15);
+}
+
+.seta {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--terracota);
+  transition: transform 0.2s ease;
+}
+
+.botao[data-aberto="true"] .seta { transform: rotate(180deg); }
+
+.lista {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.4rem;
+  list-style: none;
+  background: var(--branco-tinta);
+  border: 1px solid rgba(42, 38, 34, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(42, 38, 34, 0.16);
+  max-height: 16rem;
+  overflow-y: auto;
+  animation: entra 0.16s ease;
+}
+
+.opcao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 5px;
+  font-size: 0.94rem;
+  color: var(--carvao);
+  cursor: pointer;
+}
+
+.opcao svg {
+  width: 1rem;
+  height: 1rem;
+  color: var(--branco-tinta);
+  flex-shrink: 0;
+}
+
+.opcao[data-focada="true"] {
+  background: linear-gradient(135deg, rgba(30, 75, 95, 0.1) 0%, rgba(166, 71, 43, 0.08) 100%);
+}
+
+.opcao[data-seleccionada="true"] {
+  background: linear-gradient(135deg, var(--azul-baia) 0%, var(--terracota) 100%);
+  color: var(--branco-tinta);
+  font-weight: 500;
+}
+
+@keyframes entra {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Variante para fundo escuro (secção de contacto) */
+.contentorEscuro .botao {
+  background: rgba(250, 248, 244, 0.08);
+  border-color: rgba(250, 248, 244, 0.25);
+  color: var(--branco-tinta);
+}
+.contentorEscuro .botao:hover { border-color: rgba(250, 248, 244, 0.4); }

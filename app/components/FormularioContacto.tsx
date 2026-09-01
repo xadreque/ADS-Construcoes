@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent, type ChangeEvent } from "react";
 import styles from "./Contacto.module.css";
+import { SeletorPersonalizado } from "./SeletorPersonalizado";
 
 type Estado = "inicial" | "a-enviar" | "enviado" | "erro";
 type Erros = { nome?: string; contacto?: string };
@@ -43,6 +44,7 @@ function IconeSucesso() {
 export function FormularioContacto() {
   const [estado, setEstado] = useState<Estado>("inicial");
   const [nome, setNome] = useState("");
+  const [tipoServico, setTipoServico] = useState("interior");
   const [digitos, setDigitos] = useState(""); // só os 9 dígitos, sem +258
   const [tocado, setTocado] = useState<{ nome?: boolean; contacto?: boolean }>({});
   const [erros, setErros] = useState<Erros>({});
@@ -113,6 +115,7 @@ export function FormularioContacto() {
       formulario.reset();
       setNome("");
       setDigitos("");
+      setTipoServico("interior");
       setTocado({});
       setErros({});
     } catch {
@@ -190,13 +193,20 @@ export function FormularioContacto() {
 
       <div className={styles.campo}>
         <label htmlFor="tipoServico">Tipo de trabalho</label>
-        <select id="tipoServico" name="tipoServico" defaultValue="interior">
-          <option value="interior">Pintura interior</option>
-          <option value="exterior">Pintura exterior / fachada</option>
-          <option value="comercial">Espaço comercial</option>
-          <option value="decorativo">Acabamento decorativo</option>
-          <option value="reparacao">Reparação de imóveis e pintura geral</option>
-        </select>
+        <SeletorPersonalizado
+          valor={tipoServico}
+          aoMudar={setTipoServico}
+          nomeCampo="tipoServico"
+          variante="escuro"
+          rotuloAcessivel="Tipo de trabalho"
+          opcoes={[
+            { valor: "interior", rotulo: "Pintura interior" },
+            { valor: "exterior", rotulo: "Pintura exterior / fachada" },
+            { valor: "comercial", rotulo: "Espaço comercial" },
+            { valor: "decorativo", rotulo: "Acabamento decorativo" },
+            { valor: "reparacao", rotulo: "Reparação de imóveis e pintura geral" },
+          ]}
+        />
       </div>
 
       <div className={styles.campo}>
