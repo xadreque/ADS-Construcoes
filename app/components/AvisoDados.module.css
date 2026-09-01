@@ -1,0 +1,52 @@
+.faixa {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  background: var(--carvao);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--azul-baia) 0%, var(--terracota) 50%, var(--ocre) 100%) 1;
+  padding: 1rem clamp(1.25rem, 4vw, 3rem);
+  animation: sobe 0.35s ease;
+}
+
+.linha {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.linha p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: rgba(250, 248, 244, 0.8);
+  max-width: 62ch;
+}
+
+.linha a {
+  color: var(--ocre);
+  text-decoration: underline;
+}
+
+.botao {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, var(--azul-baia) 0%, #256d89 100%);
+  color: var(--branco-tinta);
+  padding: 0.65rem 1.4rem;
+  font-size: 0.9rem;
+}
+.botao:hover { background: linear-gradient(135deg, #256d89 0%, var(--azul-baia) 100%); }
+
+@keyframes sobe {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faixa { animation: none; }
+}

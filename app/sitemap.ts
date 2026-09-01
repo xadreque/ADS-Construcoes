@@ -22,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: `${URL_SITE}/termos-condicoes`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
     ...ARTIGOS.map((artigo) => ({
       url: `${URL_SITE}/dicas/${artigo.slug}`,
       lastModified: new Date(artigo.dataPublicacao),

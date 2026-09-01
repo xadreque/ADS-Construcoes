@@ -1,4 +1,8 @@
 :root {
+  /* Atualizada em runtime pelo AvisoDados, para os botões flutuantes não
+     ficarem escondidos atrás do aviso. */
+  --aviso-altura: 0px;
+
   /* Paleta — nomes de tinta, não nomes técnicos */
   --reboco: #f1ece2;       /* fundo — parede rebocada */
   --reboco-escuro: #e6ded0;

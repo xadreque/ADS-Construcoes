@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { BotaoWhatsAppFlutuante } from "./components/BotaoWhatsAppFlutuante";
 import { RegistoServiceWorker } from "./components/RegistoServiceWorker";
+import { AvisoDados } from "./components/AvisoDados";
+import { BotaoTopo } from "./components/BotaoTopo";
 import {
   URL_SITE,
   NOME_EMPRESA,
@@ -88,7 +90,9 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <BotaoTopo />
         <BotaoWhatsAppFlutuante />
+        <AvisoDados />
         <RegistoServiceWorker />
       </body>
     </html>

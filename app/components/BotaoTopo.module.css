@@ -1,0 +1,36 @@
+.botao {
+  position: fixed;
+  left: 1.3rem;
+  bottom: calc(1.3rem + var(--aviso-altura, 0px));
+  z-index: 90;
+  width: 2.9rem;
+  height: 2.9rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--azul-baia) 0%, var(--terracota) 100%);
+  color: var(--branco-tinta);
+  box-shadow: 0 6px 18px rgba(42, 38, 34, 0.25);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, bottom 0.25s ease;
+}
+
+.botao[data-visivel="true"] {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.botao:hover { transform: translateY(-3px); }
+.botao[data-visivel="true"]:hover { transform: translateY(-3px); }
+
+.botao svg { width: 1.3rem; height: 1.3rem; }
+
+@media (max-width: 480px) {
+  .botao { left: 1rem; bottom: calc(1rem + var(--aviso-altura, 0px)); width: 2.6rem; height: 2.6rem; }
+}

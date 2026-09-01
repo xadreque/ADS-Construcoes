@@ -156,6 +156,11 @@
   color: rgba(250, 248, 244, 0.5);
 }
 
+.linksLegais {
+  display: flex;
+  gap: 1.2rem;
+}
+
 .linkPrivacidade {
   color: rgba(250, 248, 244, 0.5);
   text-decoration: none;

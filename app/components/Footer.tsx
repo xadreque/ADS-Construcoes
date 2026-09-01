@@ -151,7 +151,10 @@ export function Footer() {
 
         <div className={styles.barraFinal}>
           <span>© {new Date().getFullYear()} {NOME_EMPRESA}</span>
-          <a href="/politica-privacidade" className={styles.linkPrivacidade}>Política de Privacidade</a>
+          <span className={styles.linksLegais}>
+            <a href="/politica-privacidade" className={styles.linkPrivacidade}>Política de Privacidade</a>
+            <a href="/termos-condicoes" className={styles.linkPrivacidade}>Termos e Condições</a>
+          </span>
           <span>{CIDADE}, {PAIS}</span>
         </div>
       </div>
