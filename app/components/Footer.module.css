@@ -1,14 +1,13 @@
 .rodape {
-  background: var(--carvao);
+  background: linear-gradient(160deg, var(--carvao) 0%, #211d19 100%);
   color: rgba(250, 248, 244, 0.72);
   padding-top: clamp(3rem, 6vw, 4.5rem);
 }
 
 .tira {
-  display: flex;
   height: 5px;
+  background: linear-gradient(90deg, var(--azul-baia) 0%, var(--terracota) 34%, var(--ocre) 67%, var(--verde-caju) 100%);
 }
-.tira span { flex: 1; }
 
 .grelha {
   display: grid;
@@ -99,18 +98,49 @@
 .formNewsletter input::placeholder { color: rgba(250, 248, 244, 0.4); }
 
 .formNewsletter button {
-  background: var(--ocre);
+  background: linear-gradient(135deg, var(--ocre) 0%, #d6a545 100%);
   color: var(--carvao);
   padding: 0.65rem 1.1rem;
   font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(192, 136, 41, 0.25);
 }
-.formNewsletter button:hover { background: #d69a35; }
+.formNewsletter button:hover {
+  background: linear-gradient(135deg, #d6a545 0%, var(--ocre) 100%);
+  transform: translateY(-1px);
+}
 
 .avisoNewsletter {
   margin-top: 0.6rem;
   font-size: 0.8rem;
   color: rgba(250, 248, 244, 0.55);
 }
+
+.redesSociais {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1.3rem;
+}
+
+.redeIcone {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(250,248,244,0.14) 0%, rgba(250,248,244,0.05) 100%);
+  border: 1px solid rgba(250, 248, 244, 0.16);
+  color: var(--branco-tinta);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.redeIcone:hover {
+  background: linear-gradient(135deg, var(--terracota) 0%, var(--ocre) 100%);
+  border-color: transparent;
+  transform: translateY(-3px);
+}
+
+.redeIcone svg { width: 1.1rem; height: 1.1rem; }
 
 .barraFinal {
   border-top: 1px solid rgba(250, 248, 244, 0.12);

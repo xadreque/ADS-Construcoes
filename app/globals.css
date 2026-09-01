@@ -54,25 +54,37 @@ button, .botao {
   font-weight: 600;
   cursor: pointer;
   border: none;
-  border-radius: 2px;
+  border-radius: 3px;
   padding: 0.95rem 1.9rem;
-  transition: transform 0.15s ease, background 0.15s ease;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
-
-.botao:active { transform: translateY(1px); }
 
 .botao-primario {
-  background: var(--azul-baia);
+  background: linear-gradient(135deg, var(--azul-baia) 0%, #256d89 100%);
   color: var(--branco-tinta);
+  box-shadow: 0 4px 14px rgba(30, 75, 95, 0.28);
 }
-.botao-primario:hover { background: var(--azul-baia-claro); }
+.botao-primario:hover {
+  background: linear-gradient(135deg, #256d89 0%, var(--azul-baia) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(30, 75, 95, 0.35);
+}
 
 .botao-secundario {
   background: transparent;
   color: var(--carvao);
   border: 1.5px solid var(--carvao);
 }
-.botao-secundario:hover { background: var(--carvao); color: var(--branco-tinta); }
+.botao-secundario:hover {
+  background: linear-gradient(135deg, var(--carvao) 0%, #423b33 100%);
+  color: var(--branco-tinta);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+.botao:active { transform: translateY(0) !important; box-shadow: none !important; }
 
 .envolvente {
   max-width: var(--max-width);

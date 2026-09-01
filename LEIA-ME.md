@@ -102,6 +102,43 @@ actualizar o QR code do cartão.
 
 ---
 
+## 7. E-mail corporativo (sugestão)
+
+Para já o site usa o teu Gmail (`sithoyada@gmail.com`), que funciona bem
+para começar. Para uma imagem mais profissional mais à frente, depois de
+teres o domínio (ex: `adsconstrucoes.co.mz`), recomendo criares um e-mail
+corporativo do tipo:
+
+- `geral@adsconstrucoes.co.mz` — para uso geral, é o mais comum
+- `orcamentos@adsconstrucoes.co.mz` — se quiseres separar pedidos de orçamento
+
+Duas formas simples e baratas de o criar, ligado ao domínio:
+
+- **Zoho Mail** (https://zoho.com/mail) — tem plano gratuito para 1 domínio
+- **Google Workspace** (https://workspace.google.com) — pago, mas integra
+  com Gmail/Drive/Calendar que já conheces
+
+Assim que tiveres o e-mail corporativo, diz-me para eu trocar em todo o
+código de uma vez (site, cartão, formulários).
+
+---
+
+## 8. Redes sociais
+
+O rodapé do site já tem os ícones prontos (Facebook, Instagram, LinkedIn),
+a apontar para `facebook.com/adsconstrucoes`, `instagram.com/adsconstrucoes`
+e `linkedin.com/company/adsconstrucoes` — usei o mesmo identificador
+"adsconstrucoes" em todo o lado (domínio, e-mail, redes) para ficar
+coerente e fácil de encontrar no mercado.
+
+**Estas contas ainda não existem** — os links no site ficam “mortos” até
+as criares. Quando criares as páginas, usa exactamente esse identificador
+(`adsconstrucoes`) para os links já funcionarem sem precisares de mexer
+no código. Se preferires um identificador diferente, diz-me qual e eu
+actualizo os três links de uma vez.
+
+---
+
 ## Antes de publicar — o que É PRECISO trocar
 
 - [x] Nome real do negócio — já actualizado (ADS-Construções, Lda)
