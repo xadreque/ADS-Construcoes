@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ADS-Construções, Lda | Pintura residencial e comercial",
+  title: "ADS - Construções, Lda | Pintura residencial e comercial",
   description:
     "Pintura de casas, prédios e espaços comerciais com acabamento de precisão. Orçamento sem compromisso.",
 };

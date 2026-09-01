@@ -1,5 +1,5 @@
 """
-Gera o cartão de visita da ADS-Construções, Lda em PDF, pronto para gráfica.
+Gera o cartão de visita da ADS - Construções, Lda em PDF, pronto para gráfica.
 
 Tamanho final: 85 x 55 mm (padrão europeu/moçambicano) com 3 mm de sanha
 (bleed) em cada lado e marcas de corte, para qualquer gráfica poder
@@ -20,7 +20,7 @@ from reportlab.lib.colors import HexColor
 # ---------------------------------------------------------------------------
 # DADOS A CONFIRMAR ANTES DE IMPRIMIR
 # ---------------------------------------------------------------------------
-MARCA = "ADS-Construções"
+MARCA = "ADS - Construções"
 SUBMARCA = "Lda"
 TAGLINE = "Pintura residencial e comercial"
 TELEFONE = "+258 84 777 5566"

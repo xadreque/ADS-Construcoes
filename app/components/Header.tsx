@@ -18,7 +18,7 @@ export function Header() {
       <div className={styles.linha}>
         <a href="#topo" className={styles.marca} onClick={() => setAberto(false)}>
           <img src="/logo-mark.svg" alt="" width={40} height={40} />
-          ADS<span>-Construções</span>
+          ADS <span>- Construções</span>
         </a>
 
         <ul className={styles.nav}>

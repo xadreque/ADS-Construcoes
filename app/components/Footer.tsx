@@ -76,7 +76,7 @@ export function Footer() {
           <div className={styles.colunaMarca}>
             <a href="#topo" className={styles.marca}>
               <img src="/logo-mark.svg" alt="" width={38} height={38} />
-              ADS<span>-Construções</span>
+              ADS <span>- Construções</span>
             </a>
             <p>
               Pintura residencial e comercial em Maputo e arredores —
@@ -119,7 +119,7 @@ export function Footer() {
         </div>
 
         <div className={styles.barraFinal}>
-          <span>© {new Date().getFullYear()} ADS-Construções, Lda</span>
+          <span>© {new Date().getFullYear()} ADS - Construções, Lda</span>
           <span>Maputo, Moçambique</span>
         </div>
       </div>
