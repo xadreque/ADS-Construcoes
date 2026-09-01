@@ -25,7 +25,7 @@ SUBMARCA = "Lda"
 TAGLINE = "Pintura residencial e comercial"
 TELEFONE = "+258 84 777 5566"
 WHATSAPP_TEXTO = "WhatsApp: +258 84 777 5566"
-EMAIL = "sithoyada@gmail.com"
+EMAIL = "sithoyada@adscontrucoes.co.mz"
 DOMINIO_EXIBIDO = "adsconstrucoes.co.mz"
 URL_QRCODE = "https://adsconstrucoes.co.mz"  # aponta para o site/portfólio
 

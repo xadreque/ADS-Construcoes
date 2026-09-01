@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Redis } from "@upstash/redis";
 import { Resend } from "resend";
-import { EMAIL_CONTACTO, NOME_EMPRESA } from "../../lib/site-config";
+import { EMAIL_NOTIFICACOES, NOME_EMPRESA } from "../../lib/site-config";
 
 // Lê as credenciais do Upstash Redis das variáveis de ambiente da Vercel.
 // Configura-as em: Vercel → Project → Settings → Environment Variables
@@ -34,7 +34,7 @@ async function notificarPorEmail(dados: {
   try {
     await resend.emails.send({
       from: `${NOME_EMPRESA} <${EMAIL_REMETENTE}>`,
-      to: EMAIL_CONTACTO,
+      to: EMAIL_NOTIFICACOES,
       subject: `Novo pedido de orçamento — ${dados.nome}`,
       text:
         `Nome: ${dados.nome}\n` +

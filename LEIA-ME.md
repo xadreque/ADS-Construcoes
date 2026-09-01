@@ -131,10 +131,20 @@ actualizar o QR code do cartão.
 
 ## 7. E-mail corporativo (sugestão)
 
-Para já o site usa o teu Gmail (`sithoyada@gmail.com`), que funciona bem
-para começar. Para uma imagem mais profissional mais à frente, depois de
-teres o domínio (ex: `adsconstrucoes.co.mz`), recomendo criares um e-mail
-corporativo do tipo:
+Para já o site usa `sithoyada@adscontrucoes.co.mz` como e-mail público de
+contacto. As notificações internas de cada pedido de orçamento vão, por
+agora, para `tecnicozanda@gmail.com` (configurável em
+`app/lib/site-config.ts`, constante `EMAIL_NOTIFICACOES`) — troca quando
+a caixa de correio definitiva estiver a ser monitorizada.
+
+Nota: repara que o e-mail público usa o domínio `adscontrucoes.co.mz`
+(sem "s" depois de "con"), enquanto o resto do site (URL, redes sociais)
+usa `adsconstrucoes.co.mz` (com "s"). Confirma se isto é mesmo
+intencional — dois domínios parecidos são fáceis de confundir e podem
+fazer com que e-mails se percam se um deles não existir de facto.
+
+Para uma imagem mais profissional mais à frente, depois de confirmares
+o domínio definitivo, recomendo criares um e-mail corporativo do tipo:
 
 - `geral@adsconstrucoes.co.mz` — para uso geral, é o mais comum
 - `orcamentos@adsconstrucoes.co.mz` — se quiseres separar pedidos de orçamento
@@ -170,7 +180,7 @@ actualizo os três links de uma vez.
 
 - [x] Nome real do negócio — já actualizado (ADS-Construções, Lda)
 - [x] Número de telefone/WhatsApp real — já actualizado (+258 84 777 5566)
-- [x] E-mail real — já actualizado (sithoyada@gmail.com)
+- [x] E-mail real — já actualizado (sithoyada@adscontrucoes.co.mz)
 - [ ] Domínio real (depois de escolhido/comprado) em
       `cartao-visita/gerar_cartao.py` (`URL_QRCODE`)
 - [ ] Fotos e vídeos reais em `public/portfolio/`
