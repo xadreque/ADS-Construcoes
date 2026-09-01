@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./Portfolio.module.css";
+import { Lightbox, type ItemLightbox } from "./Lightbox";
 
 // TODO — troca cada entrada por um trabalho real. Coloca o ficheiro em
 // /public/portfolio/ (fotos .jpg/.webp, vídeos .mp4 curtos e leves) e
@@ -20,6 +24,19 @@ const TRABALHOS: Peca[] = [
 ];
 
 export function Portfolio() {
+  const [indiceAberto, setIndiceAberto] = useState<number | null>(null);
+
+  // Só entram no lightbox as peças que já têm ficheiro real.
+  const itensComFicheiro: ItemLightbox[] = TRABALHOS.filter(
+    (t): t is Peca & { src: string } => t.src !== null
+  ).map((t) => ({ titulo: t.titulo, tipo: t.tipo, src: t.src }));
+
+  function aoClicar(t: Peca) {
+    if (!t.src) return; // placeholder — nada para mostrar ainda
+    const indice = itensComFicheiro.findIndex((i) => i.src === t.src);
+    setIndiceAberto(indice);
+  }
+
   return (
     <section className="secao" id="portfolio">
       <div className="envolvente">
@@ -32,7 +49,14 @@ export function Portfolio() {
 
         <div className={styles.grelha}>
           {TRABALHOS.map((t) => (
-            <div className={styles.peca} key={t.id}>
+            <button
+              type="button"
+              className={styles.peca}
+              key={t.id}
+              onClick={() => aoClicar(t)}
+              data-clicavel={!!t.src}
+              aria-label={t.src ? `Ver ${t.titulo}` : undefined}
+            >
               <span className={styles.marcador}>
                 {t.src ? t.tipo.toUpperCase() : "ESPAÇO RESERVADO"}
               </span>
@@ -56,10 +80,19 @@ export function Portfolio() {
               )}
 
               <span className={styles.legenda}>{t.titulo}</span>
-            </div>
+            </button>
           ))}
         </div>
       </div>
+
+      {indiceAberto !== null && (
+        <Lightbox
+          itens={itensComFicheiro}
+          indiceActual={indiceAberto}
+          onFechar={() => setIndiceAberto(null)}
+          onNavegar={setIndiceAberto}
+        />
+      )}
     </section>
   );
 }

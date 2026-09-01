@@ -156,6 +156,12 @@
   color: rgba(250, 248, 244, 0.5);
 }
 
+.linkPrivacidade {
+  color: rgba(250, 248, 244, 0.5);
+  text-decoration: none;
+}
+.linkPrivacidade:hover { color: var(--ocre); text-decoration: underline; }
+
 @media (max-width: 900px) {
   .grelha { grid-template-columns: 1fr 1fr; }
 }

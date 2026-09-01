@@ -1,0 +1,80 @@
+.fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20, 18, 16, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  animation: aparece 0.2s ease;
+}
+
+.conteudo {
+  max-width: 900px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conteudo img,
+.conteudo video {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.legenda {
+  margin-top: 1rem;
+  color: var(--branco-tinta);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+}
+
+.fechar {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(250, 248, 244, 0.12);
+  color: var(--branco-tinta);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.fechar:hover { background: rgba(250, 248, 244, 0.22); }
+
+.seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(250, 248, 244, 0.12);
+  color: var(--branco-tinta);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.seta:hover { background: rgba(250, 248, 244, 0.22); }
+
+.setaEsquerda { left: 1.2rem; }
+.setaDireita { right: 1.2rem; }
+
+@keyframes aparece {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .seta { width: 2.4rem; height: 2.4rem; font-size: 1.4rem; }
+  .fechar { width: 2.2rem; height: 2.2rem; }
+}
