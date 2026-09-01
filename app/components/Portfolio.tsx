@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./Portfolio.module.css";
 import { Lightbox, type ItemLightbox } from "./Lightbox";
 
@@ -62,8 +63,14 @@ export function Portfolio() {
               </span>
 
               {t.src && t.tipo === "foto" && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={t.src} alt={t.titulo} loading="lazy" />
+                <Image
+                  src={t.src}
+                  alt={t.titulo}
+                  fill
+                  sizes="(max-width: 760px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                  loading="lazy"
+                />
               )}
               {t.src && t.tipo === "video" && (
                 <video src={t.src} muted loop playsInline autoPlay />

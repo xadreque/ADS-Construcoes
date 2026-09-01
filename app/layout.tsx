@@ -4,6 +4,7 @@ import { BotaoWhatsAppFlutuante } from "./components/BotaoWhatsAppFlutuante";
 import { RegistoServiceWorker } from "./components/RegistoServiceWorker";
 import { AvisoDados } from "./components/AvisoDados";
 import { BotaoTopo } from "./components/BotaoTopo";
+import { ContadorVisitas } from "./components/ContadorVisitas";
 import {
   URL_SITE,
   NOME_EMPRESA,
@@ -94,6 +95,7 @@ export default function RootLayout({
         <BotaoWhatsAppFlutuante />
         <AvisoDados />
         <RegistoServiceWorker />
+        <ContadorVisitas />
       </body>
     </html>
   );

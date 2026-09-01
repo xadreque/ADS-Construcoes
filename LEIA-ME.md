@@ -58,6 +58,33 @@ Para veres os pedidos recebidos, usa a consola do Upstash (Data Browser)
 e procura chaves que começam por `lead:`. Os e-mails da newsletter ficam
 guardados num único conjunto chamado `newsletter:emails`.
 
+**Contador de visitas** — o site regista automaticamente uma visita por
+sessão (sem mostrar nada ao visitante). Para veres o total, procura a
+chave `visitas:total` na consola do Upstash — ou `visitas:dia:AAAA-MM-DD`
+para veres um dia específico.
+
+---
+
+## 3b. Notificação por e-mail a cada pedido novo (Resend)
+
+Sempre que alguém preenche o formulário de orçamento, o site tenta
+enviar-te um e-mail automático com os dados do pedido — além de guardar
+no Redis.
+
+1. Cria uma conta grátis em https://resend.com (100 e-mails/dia grátis,
+   suficiente para começar).
+2. Gera uma **API Key** no painel do Resend.
+3. Na Vercel, adiciona a variável de ambiente:
+   - `RESEND_API_KEY`
+4. (Opcional, mais profissional) Verifica o teu domínio no Resend e
+   define também `RESEND_FROM_EMAIL` (ex: `pedidos@adsconstrucoes.co.mz`).
+   Sem isto, os e-mails são enviados por um remetente de testes do Resend
+   — funciona, mas não fica tão bonito na caixa de entrada.
+
+Sem `RESEND_API_KEY` configurada, o site continua a funcionar
+normalmente (o pedido fica guardado no Redis na mesma) — só não recebes
+o e-mail de aviso.
+
 ---
 
 ## 4. Adicionar as fotos e vídeos reais
