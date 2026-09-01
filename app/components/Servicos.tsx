@@ -25,6 +25,12 @@ const SERVICOS = [
     texto:
       "Texturas, efeitos e paletas personalizadas para quem quer um espaço com identidade própria.",
   },
+  {
+    cor: "var(--azul-baia-claro)",
+    titulo: "Reparação de imóveis e pintura geral",
+    texto:
+      "Pequenas obras e reparações — rebocos, fissuras, humidade, gesso e acabamentos — seguidas da pintura geral do espaço, tudo tratado pela mesma equipa.",
+  },
 ];
 
 export function Servicos() {
