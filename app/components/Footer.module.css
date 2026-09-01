@@ -1,18 +1,20 @@
 .rodape {
   background: linear-gradient(160deg, var(--carvao) 0%, #211d19 100%);
   color: rgba(250, 248, 244, 0.72);
-  padding-top: clamp(3rem, 6vw, 4.5rem);
+  padding-top: 0;
 }
 
 .tira {
-  height: 5px;
+  height: 4px;
   background: linear-gradient(90deg, var(--azul-baia) 0%, var(--terracota) 34%, var(--ocre) 67%, var(--verde-caju) 100%);
+  box-shadow: 0 2px 18px rgba(192, 136, 41, 0.18);
 }
 
 .grelha {
   display: grid;
   grid-template-columns: 1.3fr 0.8fr 0.9fr 1.1fr;
   gap: clamp(2rem, 4vw, 3rem);
+  padding-top: clamp(3rem, 6vw, 4.5rem);
   padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
 }
 
@@ -122,22 +124,23 @@
 }
 
 .redeIcone {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(250,248,244,0.14) 0%, rgba(250,248,244,0.05) 100%);
-  border: 1px solid rgba(250, 248, 244, 0.16);
+  background: linear-gradient(135deg, var(--azul-baia) 0%, #143440 100%);
+  border: 1px solid rgba(250, 248, 244, 0.12);
   color: var(--branco-tinta);
-  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, background 0.25s ease, box-shadow 0.2s ease;
 }
 
 .redeIcone:hover {
   background: linear-gradient(135deg, var(--terracota) 0%, var(--ocre) 100%);
-  border-color: transparent;
   transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(166, 71, 43, 0.35);
 }
 
 .redeIcone svg { width: 1.1rem; height: 1.1rem; }

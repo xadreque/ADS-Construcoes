@@ -20,24 +20,57 @@
   margin-top: 1.1rem;
 }
 
+/* Contactos directos — cada um com ícone circular em gradiente */
 .contactosDirectos {
-  margin-top: 2.2rem;
+  margin-top: 2.4rem;
   list-style: none;
   padding: 0;
   display: grid;
-  gap: 0.7rem;
+  gap: 0.9rem;
 }
 
-.contactosDirectos a {
+.contactoLinha {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
   text-decoration: none;
   color: var(--branco-tinta);
-  border-bottom: 1px solid rgba(250, 248, 244, 0.35);
-  padding-bottom: 1px;
+  padding: 0.5rem 0.6rem;
+  margin: 0 -0.6rem;
+  border-radius: 8px;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
+.contactoLinha:hover {
+  background: rgba(250, 248, 244, 0.06);
+  transform: translateX(3px);
+}
+
+.iconeContacto {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--branco-tinta);
+}
+
+.iconeContacto svg { width: 1.15rem; height: 1.15rem; }
+
+.iconeContacto[data-tipo="whatsapp"] { background: linear-gradient(135deg, #3fae5c 0%, #2c7d40 100%); }
+.iconeContacto[data-tipo="telefone"] { background: linear-gradient(135deg, var(--azul-baia-claro) 0%, var(--azul-baia) 100%); }
+.iconeContacto[data-tipo="email"] { background: linear-gradient(135deg, var(--ocre) 0%, #a5731f 100%); }
+
+.contactoTexto { display: flex; flex-direction: column; }
+.contactoTexto small { color: rgba(250, 248, 244, 0.55); font-size: 0.76rem; }
+.contactoTexto span { font-size: 0.98rem; }
+
+/* Formulário */
 .form {
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .campo {
@@ -54,25 +87,154 @@
 .campo textarea,
 .campo select {
   background: rgba(250, 248, 244, 0.08);
-  border: 1px solid rgba(250, 248, 244, 0.25);
-  border-radius: 2px;
+  border: 1.5px solid rgba(250, 248, 244, 0.25);
+  border-radius: 4px;
   padding: 0.75rem 0.9rem;
   color: var(--branco-tinta);
   font-family: var(--sans);
   font-size: 0.98rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--ocre);
+  box-shadow: 0 0 0 3px rgba(192, 136, 41, 0.2);
 }
 
 .campo input::placeholder,
 .campo textarea::placeholder { color: rgba(250, 248, 244, 0.4); }
 
+.campo input[data-invalido="true"] {
+  border-color: #c0522f;
+  box-shadow: 0 0 0 3px rgba(192, 82, 47, 0.18);
+}
+
+.campo input[data-valido="true"] {
+  border-color: #6b8a4a;
+}
+
+/* Campo de telefone com prefixo fixo */
+.grupoTelefone {
+  display: flex;
+  align-items: stretch;
+  background: rgba(250, 248, 244, 0.08);
+  border: 1.5px solid rgba(250, 248, 244, 0.25);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grupoTelefone:focus-within {
+  border-color: var(--ocre);
+  box-shadow: 0 0 0 3px rgba(192, 136, 41, 0.2);
+}
+
+.grupoTelefone[data-invalido="true"] {
+  border-color: #c0522f;
+  box-shadow: 0 0 0 3px rgba(192, 82, 47, 0.18);
+}
+
+.grupoTelefone[data-valido="true"] { border-color: #6b8a4a; }
+
+.prefixoTelefone {
+  display: flex;
+  align-items: center;
+  padding: 0 0.8rem;
+  background: linear-gradient(135deg, var(--azul-baia) 0%, #256d89 100%);
+  color: var(--branco-tinta);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+}
+
+.grupoTelefone input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 0.9rem;
+  color: var(--branco-tinta);
+  font-family: var(--sans);
+  font-size: 0.98rem;
+}
+.grupoTelefone input:focus { outline: none; }
+
+.iconeInline {
+  display: flex;
+  align-items: center;
+  padding-right: 0.8rem;
+  animation: apareceEscala 0.25s ease;
+}
+
+/* Mensagens de erro por campo — gradiente + entrada animada */
+.mensagemErroCampo {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: 0.83rem;
+  color: #e8a88f;
+  animation: deslizaEntra 0.25s ease;
+}
+
+.mensagemErroCampo.agitar { animation: deslizaEntra 0.25s ease, agita 0.4s ease; }
+
+.iconeMensagem { width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+
+/* Mensagens de estado (sucesso geral / erro geral do envio) */
+.mensagemEstado {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 1rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.94rem;
+  animation: deslizaEntra 0.3s ease;
+}
+
+.mensagemEstado p { margin: 0; }
+
+.mensagemSucesso {
+  background: linear-gradient(135deg, rgba(107, 138, 74, 0.18) 0%, rgba(74, 98, 52, 0.1) 100%);
+  border: 1px solid rgba(107, 138, 74, 0.4);
+  color: #d3e0c4;
+}
+
+.mensagemErro {
+  background: linear-gradient(135deg, rgba(192, 82, 47, 0.18) 0%, rgba(138, 58, 31, 0.1) 100%);
+  border: 1px solid rgba(192, 82, 47, 0.4);
+  color: #f0c9ba;
+  margin-top: 0.2rem;
+}
+
 .enviar {
   margin-top: 0.4rem;
-  background: var(--ocre);
-  color: var(--carvao);
 }
-.enviar:hover { background: #d69a35; }
 
-.estado {
-  font-size: 0.9rem;
-  margin-top: 0.2rem;
+.enviar.agitar { animation: agita 0.4s ease; }
+
+@keyframes deslizaEntra {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes apareceEscala {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes agita {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mensagemErroCampo, .mensagemEstado, .iconeInline { animation: none; }
+  .mensagemErroCampo.agitar, .enviar.agitar { animation: none; }
 }
