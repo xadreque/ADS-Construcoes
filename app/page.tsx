@@ -1,8 +1,11 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { FaixaConfianca } from "./components/FaixaConfianca";
 import { Pincelada } from "./components/Pincelada";
 import { Servicos } from "./components/Servicos";
+import { Calculadora } from "./components/Calculadora";
 import { Portfolio } from "./components/Portfolio";
+import { Testemunhos } from "./components/Testemunhos";
 import { Processo } from "./components/Processo";
 import { Contacto } from "./components/Contacto";
 import { Footer } from "./components/Footer";
@@ -13,13 +16,22 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <FaixaConfianca />
         <Pincelada cor="var(--branco-tinta)" />
         <Servicos />
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--reboco)" />
         </div>
+        <Calculadora />
+        <div style={{ background: "var(--branco-tinta)" }}>
+          <Pincelada cor="var(--reboco)" />
+        </div>
         <Portfolio />
         <Pincelada cor="var(--branco-tinta)" />
+        <Testemunhos />
+        <div style={{ background: "var(--branco-tinta)" }}>
+          <Pincelada cor="var(--reboco)" />
+        </div>
         <Processo />
         <div style={{ background: "var(--branco-tinta)" }}>
           <Pincelada cor="var(--carvao)" />

@@ -1,10 +1,6 @@
 import styles from "./Contacto.module.css";
 import { FormularioContacto } from "./FormularioContacto";
-
-// Contactos reais do negócio.
-const WHATSAPP_NUMERO = "258847775566";
-const TELEFONE_EXIBIDO = "+258 84 777 5566";
-const EMAIL = "sithoyada@gmail.com";
+import { WHATSAPP_NUMERO, TELEFONE_EXIBIDO, EMAIL_CONTACTO } from "../lib/site-config";
 
 function IconeWhatsApp() {
   return (
@@ -63,11 +59,11 @@ export function Contacto() {
                 </a>
               </li>
               <li>
-                <a className={styles.contactoLinha} href={`mailto:${EMAIL}`}>
+                <a className={styles.contactoLinha} href={`mailto:${EMAIL_CONTACTO}`}>
                   <span className={styles.iconeContacto} data-tipo="email"><IconeEmail /></span>
                   <span className={styles.contactoTexto}>
                     <small>E-mail</small>
-                    <span>{EMAIL}</span>
+                    <span>{EMAIL_CONTACTO}</span>
                   </span>
                 </a>
               </li>

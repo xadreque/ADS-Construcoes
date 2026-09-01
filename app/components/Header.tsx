@@ -5,8 +5,8 @@ import styles from "./Header.module.css";
 
 const LINKS = [
   { href: "#servicos", label: "Serviços" },
+  { href: "#calculadora", label: "Orçamento rápido" },
   { href: "#portfolio", label: "Trabalhos" },
-  { href: "#processo", label: "Como trabalhamos" },
   { href: "#contacto", label: "Contacto" },
 ];
 

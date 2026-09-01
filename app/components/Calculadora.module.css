@@ -1,0 +1,126 @@
+.secao { background: var(--branco-tinta); }
+
+.cabecalho {
+  max-width: 46ch;
+  margin: 0 auto 2.6rem;
+  text-align: center;
+}
+
+.cabecalho h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+.cabecalho p { margin: 0.7rem auto 0; color: rgba(42, 38, 34, 0.72); }
+
+.caixa {
+  max-width: 640px;
+  margin: 0 auto;
+  background: linear-gradient(160deg, var(--reboco) 0%, var(--reboco-escuro) 100%);
+  border: 1px solid rgba(42, 38, 34, 0.1);
+  border-radius: 10px;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  box-shadow: 0 12px 32px rgba(42, 38, 34, 0.08);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 1.1rem;
+  align-items: end;
+}
+
+.campo { display: grid; gap: 0.4rem; }
+
+.campo label {
+  font-size: 0.85rem;
+  color: rgba(42, 38, 34, 0.68);
+  font-weight: 500;
+}
+
+.campo input,
+.campo select {
+  background: var(--branco-tinta);
+  border: 1.5px solid rgba(42, 38, 34, 0.18);
+  border-radius: 4px;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--sans);
+  font-size: 0.98rem;
+  color: var(--carvao);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo input:focus,
+.campo select:focus {
+  outline: none;
+  border-color: var(--azul-baia);
+  box-shadow: 0 0 0 3px rgba(30, 75, 95, 0.15);
+}
+
+.campo input[data-invalido="true"] {
+  border-color: #c0522f;
+  box-shadow: 0 0 0 3px rgba(192, 82, 47, 0.15);
+}
+
+.botaoCalcular {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--azul-baia) 0%, #256d89 100%);
+  color: var(--branco-tinta);
+  box-shadow: 0 4px 14px rgba(30, 75, 95, 0.25);
+}
+.botaoCalcular:hover { background: linear-gradient(135deg, #256d89 0%, var(--azul-baia) 100%); }
+
+.erro {
+  margin: 1rem 0 0;
+  font-size: 0.88rem;
+  color: #a6472b;
+  animation: entra 0.25s ease;
+}
+
+.resultado {
+  margin-top: 1.8rem;
+  padding-top: 1.6rem;
+  border-top: 1px dashed rgba(42, 38, 34, 0.18);
+  text-align: center;
+  animation: entra 0.35s ease;
+}
+
+.rotuloResultado {
+  display: block;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(42, 38, 34, 0.55);
+}
+
+.valorResultado {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  background: linear-gradient(135deg, var(--azul-baia) 0%, var(--terracota) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.notaResultado {
+  margin: 0.8rem auto 0;
+  max-width: 42ch;
+  font-size: 0.86rem;
+  color: rgba(42, 38, 34, 0.65);
+}
+
+.botaoWhatsApp {
+  display: inline-block;
+  margin-top: 1.3rem;
+  background: linear-gradient(135deg, #3fae5c 0%, #257a3c 100%);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(37, 122, 60, 0.3);
+}
+.botaoWhatsApp:hover { background: linear-gradient(135deg, #257a3c 0%, #3fae5c 100%); }
+
+@keyframes entra {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 560px) {
+  .form { grid-template-columns: 1fr; }
+}
