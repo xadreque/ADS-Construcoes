@@ -1,0 +1,14 @@
+{
+  "name": "ADS - Construções, Lda",
+  "short_name": "ADS Construções",
+  "description": "Pintura residencial e comercial em Maputo e arredores",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F1ECE2",
+  "theme_color": "#1E4B5F",
+  "lang": "pt-MZ",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

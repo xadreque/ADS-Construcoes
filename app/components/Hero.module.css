@@ -75,11 +75,10 @@
   inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
   z-index: 0;
+  pointer-events: none;
 }
 
 .amostraFoto span { position: relative; z-index: 1; }
-
-.antesDepois { z-index: 1; }
 
 .marcador {
   position: absolute;
@@ -91,62 +90,6 @@
   color: rgba(255,255,255,0.75);
   z-index: 2;
 }
-
-.rotuloAmostra {
-  position: relative;
-  z-index: 2;
-}
-
-.antesDepois {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.ladoAntes,
-.ladoDepois {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 50%;
-}
-
-.ladoAntes {
-  left: 0;
-  background: linear-gradient(160deg, #57524b 0%, #2c2823 100%);
-}
-
-.ladoDepois {
-  right: 0;
-  background: linear-gradient(160deg, var(--terracota) 0%, var(--ocre) 130%);
-}
-
-.divisor {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: rgba(250, 248, 244, 0.6);
-  transform: translateX(-1px);
-}
-
-.alca {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 50%;
-  background: var(--branco-tinta);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-}
-
-.alca svg { width: 1.2rem; height: 1.2rem; }
 
 @media (max-width: 860px) {
   .grelha { grid-template-columns: 1fr; }

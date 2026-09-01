@@ -25,10 +25,10 @@ const ICONES_REDES: Record<string, ReactNode> = {
 };
 
 const LINKS_RAPIDOS = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#portfolio", label: "Trabalhos" },
-  { href: "#processo", label: "Como trabalhamos" },
-  { href: "#contacto", label: "Pedir orçamento" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#portfolio", label: "Trabalhos" },
+  { href: "/dicas", label: "Dicas" },
+  { href: "/#contacto", label: "Pedir orçamento" },
 ];
 
 function Newsletter() {
@@ -91,7 +91,7 @@ export function Footer() {
       <div className="envolvente">
         <div className={styles.grelha}>
           <div className={styles.colunaMarca}>
-            <a href="#topo" className={styles.marca}>
+            <a href="/#topo" className={styles.marca}>
               <img src="/logo-mark.svg" alt="" width={38} height={38} />
               ADS <span>- Construções</span>
             </a>
@@ -137,7 +137,7 @@ export function Footer() {
             <a className={styles.contactoItem} href={`mailto:${EMAIL_CONTACTO}`}>
               {EMAIL_CONTACTO}
             </a>
-            <a className={styles.contactoItem} href="#topo">
+            <a className={styles.contactoItem} href="/#topo">
               Maputo, Moçambique
             </a>
           </div>

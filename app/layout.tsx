@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { BotaoWhatsAppFlutuante } from "./components/BotaoWhatsAppFlutuante";
+import { RegistoServiceWorker } from "./components/RegistoServiceWorker";
 import {
   URL_SITE,
   NOME_EMPRESA,
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(URL_SITE),
   title: TITULO,
   description: DESCRICAO,
+  manifest: "/manifest.json",
   keywords: [
     "pintor Maputo",
     "pintura residencial Maputo",
@@ -77,6 +79,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap"
           rel="stylesheet"
         />
+        <meta name="theme-color" content="#1E4B5F" />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
@@ -86,6 +89,7 @@ export default function RootLayout({
       <body>
         {children}
         <BotaoWhatsAppFlutuante />
+        <RegistoServiceWorker />
       </body>
     </html>
   );

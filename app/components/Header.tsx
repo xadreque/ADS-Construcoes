@@ -4,10 +4,11 @@ import { useState } from "react";
 import styles from "./Header.module.css";
 
 const LINKS = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#calculadora", label: "Orçamento rápido" },
-  { href: "#portfolio", label: "Trabalhos" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#calculadora", label: "Orçamento rápido" },
+  { href: "/#portfolio", label: "Trabalhos" },
+  { href: "/dicas", label: "Dicas" },
+  { href: "/#contacto", label: "Contacto" },
 ];
 
 export function Header() {
@@ -16,7 +17,7 @@ export function Header() {
   return (
     <header className={styles.cabecalho}>
       <div className={styles.linha}>
-        <a href="#topo" className={styles.marca} onClick={() => setAberto(false)}>
+        <a href="/#topo" className={styles.marca} onClick={() => setAberto(false)}>
           <img src="/logo-mark.svg" alt="" width={40} height={40} />
           ADS <span>- Construções</span>
         </a>
@@ -30,7 +31,7 @@ export function Header() {
         </ul>
 
         <div className={styles.acoesDireita}>
-          <a href="#contacto" className={`botao botao-primario ${styles.botaoDesktop}`}>
+          <a href="/#contacto" className={`botao botao-primario ${styles.botaoDesktop}`}>
             Pedir orçamento
           </a>
           <button
@@ -56,7 +57,7 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <a href="#contacto" className="botao botao-primario" onClick={() => setAberto(false)}>
+          <a href="/#contacto" className="botao botao-primario" onClick={() => setAberto(false)}>
             Pedir orçamento
           </a>
         </div>

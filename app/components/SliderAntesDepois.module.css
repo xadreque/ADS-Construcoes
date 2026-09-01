@@ -1,0 +1,74 @@
+.contentor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: ew-resize;
+  touch-action: none;
+  user-select: none;
+}
+
+.camadaDepois,
+.camadaAntes {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.camadaDepois {
+  background: linear-gradient(160deg, var(--terracota) 0%, var(--ocre) 130%);
+}
+
+.camadaAntes {
+  background: linear-gradient(160deg, #57524b 0%, #2c2823 100%);
+}
+
+.divisor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(250, 248, 244, 0.65);
+  transform: translateX(-1px);
+}
+
+.alca {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: var(--branco-tinta);
+  color: var(--carvao);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  cursor: ew-resize;
+  touch-action: none;
+}
+
+.alca svg { width: 1.2rem; height: 1.2rem; }
+
+.alca:focus-visible {
+  outline: 3px solid var(--ocre);
+  outline-offset: 3px;
+}
+
+.rotulo {
+  position: absolute;
+  bottom: 1rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 248, 244, 0.9);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.rotulo[data-lado="antes"] { left: 1rem; }
+.rotulo[data-lado="depois"] { right: 1rem; }
