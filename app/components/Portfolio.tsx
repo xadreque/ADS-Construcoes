@@ -15,12 +15,13 @@ type Peca = {
   categoria: Categoria;
   tipo: "foto" | "video";
   src: string | null; // null enquanto não houver ficheiro real
+  poster?: string; // imagem mostrada antes do vídeo carregar/reproduzir
 };
 
 const TRABALHOS: Peca[] = [
-  { id: "p1", titulo: "Sala — Matola", categoria: "Interior", tipo: "foto", src: null },
-  { id: "p2", titulo: "Fachada — Sommerschield", categoria: "Exterior", tipo: "foto", src: null },
-  { id: "p3", titulo: "Loja — Baixa", categoria: "Comercial", tipo: "video", src: null },
+  { id: "p1", titulo: "Fachada — moradia pintada de branco", categoria: "Exterior", tipo: "video", src: "/portfolio/fachada-pintada.mp4", poster: "/portfolio/fachada-pintada-poster.jpg" },
+  { id: "p2", titulo: "Varanda e tecto — acabamento branco", categoria: "Exterior", tipo: "foto", src: "/portfolio/fachada-teto-01.jpg" },
+  { id: "p3", titulo: "Entrada — parede e caixilharia", categoria: "Exterior", tipo: "foto", src: "/portfolio/fachada-varanda-02.jpg" },
   { id: "p4", titulo: "Quarto — Polana", categoria: "Interior", tipo: "foto", src: null },
   { id: "p5", titulo: "Escritório — Malhangalene", categoria: "Comercial", tipo: "foto", src: null },
   { id: "p6", titulo: "Muro — Costa do Sol", categoria: "Exterior", tipo: "foto", src: null },
@@ -107,7 +108,7 @@ export function Portfolio() {
                 />
               )}
               {t.src && t.tipo === "video" && (
-                <video src={t.src} muted loop playsInline autoPlay />
+                <video src={t.src} poster={t.poster} muted loop playsInline autoPlay />
               )}
               {!t.src && (
                 <div className={styles.placeholder}>
