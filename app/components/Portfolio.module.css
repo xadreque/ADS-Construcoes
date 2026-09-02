@@ -5,12 +5,42 @@
   justify-content: space-between;
   align-items: flex-end;
   gap: 2rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.6rem;
   flex-wrap: wrap;
 }
 
 .cabecalho h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
 .cabecalho p { color: rgba(42, 38, 34, 0.75); margin-top: 0.6rem; }
+
+/* Filtros por categoria */
+.filtros {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.filtro {
+  background: none;
+  border: 1px solid rgba(42, 38, 34, 0.18);
+  border-radius: 999px;
+  padding: 0.45rem 1.15rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: rgba(42, 38, 34, 0.68);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.filtro:hover { border-color: var(--terracota); color: var(--carvao); transform: translateY(-1px); }
+
+.filtro[data-activo="true"] {
+  background: linear-gradient(135deg, var(--azul-baia) 0%, var(--terracota) 100%);
+  border-color: transparent;
+  color: var(--branco-tinta);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(30, 75, 95, 0.25);
+}
 
 .grelha {
   display: grid;
@@ -22,7 +52,7 @@
 
 .peca {
   position: relative;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
   background: var(--reboco-escuro);
   min-height: 170px;
@@ -35,9 +65,33 @@
   font: inherit;
   text-align: left;
   cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .peca[data-clicavel="true"] { cursor: zoom-in; }
+
+.peca:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(42, 38, 34, 0.16); }
+
+/* Borda em gradiente ao passar o rato/focar — técnica de máscara, sem
+   precisar de nenhum elemento extra no markup. */
+.peca::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--azul-baia) 0%, var(--terracota) 55%, var(--ocre) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.peca:hover::after,
+.peca:focus-visible::after { opacity: 1; }
 
 .peca img,
 .peca video {
@@ -51,6 +105,37 @@
 
 .peca:hover img,
 .peca:hover video { transform: scale(1.06); }
+
+/* Placeholder elegante — em vez das riscas cinzentas simples */
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: linear-gradient(150deg, var(--reboco) 0%, var(--reboco-escuro) 100%);
+}
+
+.placeholderIcone {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--azul-baia) 0%, var(--terracota) 100%);
+  color: var(--branco-tinta);
+  opacity: 0.85;
+}
+
+.placeholderIcone svg { width: 1.25rem; height: 1.25rem; }
+
+.placeholderTexto {
+  font-size: 0.76rem;
+  color: rgba(42, 38, 34, 0.5);
+}
 
 .legenda {
   position: relative;
@@ -73,7 +158,20 @@
   top: 0.7rem;
   left: 0.8rem;
   font-size: 0.68rem;
-  color: rgba(250, 248, 244, 0.55);
+  letter-spacing: 0.03em;
+  color: rgba(250, 248, 244, 0.6);
+}
+
+/* Nos placeholders o fundo é claro — o texto do marcador tem de ser escuro */
+.peca[data-clicavel="false"] .marcador {
+  color: rgba(42, 38, 34, 0.4);
+}
+
+.vazio {
+  padding: 2.5rem 0;
+  text-align: center;
+  color: rgba(42, 38, 34, 0.5);
+  font-size: 0.92rem;
 }
 
 @media (max-width: 760px) {
