@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 
 const LINKS = [
@@ -13,9 +13,30 @@ const LINKS = [
 
 export function Header() {
   const [aberto, setAberto] = useState(false);
+  const cabecalhoRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!aberto) return;
+
+    function aoClicarFora(e: MouseEvent) {
+      if (cabecalhoRef.current && !cabecalhoRef.current.contains(e.target as Node)) {
+        setAberto(false);
+      }
+    }
+    function aoPressionarTecla(e: KeyboardEvent) {
+      if (e.key === "Escape") setAberto(false);
+    }
+
+    document.addEventListener("mousedown", aoClicarFora);
+    document.addEventListener("keydown", aoPressionarTecla);
+    return () => {
+      document.removeEventListener("mousedown", aoClicarFora);
+      document.removeEventListener("keydown", aoPressionarTecla);
+    };
+  }, [aberto]);
 
   return (
-    <header className={styles.cabecalho}>
+    <header className={styles.cabecalho} ref={cabecalhoRef}>
       <div className={styles.linha}>
         <a href="/#topo" className={styles.marca} onClick={() => setAberto(false)}>
           <img src="/logo-mark.svg" alt="" width={40} height={40} />
